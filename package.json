@@ -1,11 +1,7 @@
 {
-  "name": "databuddy_client",
+  "name": "databuddy-client",
   "version": "0.0.1",
   "description": "Client library for databuddy",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SuryaSankar/databuddy_client.git"
@@ -15,5 +11,25 @@
   "bugs": {
     "url": "https://github.com/SuryaSankar/databuddy_client/issues"
   },
-  "homepage": "https://github.com/SuryaSankar/databuddy_client#readme"
+  "homepage": "https://github.com/SuryaSankar/databuddy_client#readme",
+  "main": "dist/databuddy-client.cjs.js",
+  "module": "dist/databuddy-client.esm.js",
+  "browser": "dist/databuddy-client.umd.js",
+  "dependencies": {
+    "ms": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
 }
