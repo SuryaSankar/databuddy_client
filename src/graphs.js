@@ -20,3 +20,17 @@ export const plotDygraphTimeSeriesFromData = ({elemId, data, xColName, yCols}) =
     );
 
 }
+
+export const plotlyPieChart = ({
+        elemId, responseRows, valueGetter, labelGetter,
+        layout={height: 600, width: 600}
+    }) => {
+    const values = responseRows.map(
+        row => typeof valueGetter==="function" ? valueGetter(row) : row[valueGetter]
+    );
+    const labels = responseRows.map(
+        row => typeof labelGetter==="function" ? labelGetter(row) : row[labelGetter]
+    );
+    console.log(values, labels);
+    Plotly.newPlot(elemId, [{values, labels, type: 'pie'}], layout)
+}
