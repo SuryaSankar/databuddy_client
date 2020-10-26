@@ -1,6 +1,6 @@
 {
   "name": "databuddy-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Client library for databuddy",
   "repository": {
     "type": "git",
@@ -12,22 +12,26 @@
     "url": "https://github.com/SuryaSankar/databuddy_client/issues"
   },
   "homepage": "https://github.com/SuryaSankar/databuddy_client#readme",
-  "main": "dist/databuddy-client.cjs.js",
-  "module": "dist/databuddy-client.esm.js",
-  "browser": "dist/databuddy-client.umd.js",
+  "main": "dist/databuddy-client.cjs.min.js",
+  "module": "dist/databuddy-client.esm.min.js",
+  "browser": "dist/databuddy-client.umd.min.js",
   "dependencies": {
+    "listree": "^0.0.5",
     "ms": "^2.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.1",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "rollup": "^1.29.0"
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "rollup": "^1.32.1",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "test": "node test/test.js",
-    "pretest": "npm run build"
+    "pretest": "npm run build",
+    "deploy": "npm run build; npm publish"
   },
   "files": [
     "dist"
