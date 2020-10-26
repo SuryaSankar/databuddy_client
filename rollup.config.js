@@ -18,7 +18,7 @@ export default {
     ],
     output: [
         {
-            name: 'databuddy-client',
+            name: 'databuddy',
             file: pkg.browser,
             format: 'umd',
         },
